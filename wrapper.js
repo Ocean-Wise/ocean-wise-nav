@@ -1,9 +1,9 @@
-import OceanWiseNavEl from './OceanWiseNavEl';
+import OceanWiseNavBarEl from './OceanWiseNavBarEl';
 import ReactDOM from 'react-dom';
 import React from 'react';
 
-const OceanWiseNav = (element) => {
-  ReactDOM.render(<OceanWiseNavEl />, element);
+const OceanWiseNavBar = (element) => {
+  ReactDOM.render(<OceanWiseNavBarEl />, element);
 };
 
-module.exports = OceanWiseNav;
+module.exports = OceanWiseNavBar;

@@ -2,9 +2,9 @@ module.exports = {
   entry:  './wrapper.js',
   output: {
       libraryTarget: 'var',
-      library: 'OceanWiseNav',
+      library: 'OceanWiseNavBar',
       path:     'builds',
-      filename: 'OceanWiseNav.js',
+      filename: 'OceanWiseNavBar.js',
   },
   module: {
       loaders: [

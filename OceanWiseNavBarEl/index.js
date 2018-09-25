@@ -1,6 +1,6 @@
 /**
 *
-* OceanWiseNavEl
+* OceanWiseNavBarEl
 *
 */
 
@@ -9,7 +9,7 @@ import onClickOutside from 'react-onclickoutside';
 import HelloBar from './HelloBar';
 
 
-class OceanWiseNavEl extends React.Component { // eslint-disable-line react/prefer-stateless-function
+class OceanWiseNavBarEl extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor() {
     super();
     this.state = {
@@ -89,4 +89,4 @@ class OceanWiseNavEl extends React.Component { // eslint-disable-line react/pref
   }
 }
 
-export default onClickOutside(OceanWiseNavEl);
+export default onClickOutside(OceanWiseNavBarEl);

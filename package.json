@@ -1,5 +1,5 @@
 {
-  "name": "OceanWiseNav",
+  "name": "OceanWiseNavBar",
   "version": "1.0.0",
   "description": "A wrapped react component for the Ocean Wise navigation bar. Allows consumption in non-react websites using webpack.",
   "main": "wrapper.js",

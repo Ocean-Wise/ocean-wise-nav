@@ -8,9 +8,9 @@ module.exports = {
   },
   output: {
       libraryTarget: 'var',
-      library: 'OceanWiseNav',
+      library: 'OceanWiseNavBar',
       path:     'builds',
-      filename: 'OceanWiseNav.min.js',
+      filename: 'OceanWiseNavBar.min.js',
   },
   module: {
       loaders: [
