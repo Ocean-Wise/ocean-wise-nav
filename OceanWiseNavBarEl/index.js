@@ -8,16 +8,12 @@ import React from 'react';
 import onClickOutside from 'react-onclickoutside';
 import HelloBar from './HelloBar';
 
-
 class OceanWiseNavBarEl extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor() {
     super();
     this.state = {
       active: false,
     };
-    this.setState = this.setState.bind(this);
-    // this.setWrapperRef = this.setWrapperRef.bind(this);
-    // this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
   componentDidMount() {
@@ -28,26 +24,19 @@ class OceanWiseNavBarEl extends React.Component { // eslint-disable-line react/p
     document.removeEventListener('mousedown', this.handleClickOutside);
   }
 
-  // setWrapperRef(node) {
-  //   console.log(node);
-  //   this.wrapperRef = node;
-  // }
-  //
-  // handleClickOutside(event) {
-  //   console.log(this.wrapperRef);
-  //   console.log(event.target);
-  //   if (this.wrapperRef && !this.wrapperRef.contains(event.target) && this.state.active) {
-  //     this.toggleActive();
-  //   }
-  // }
-
   handleClickOutside = evt => {
-    if (this.state.active) {
-      this.toggleActive();
+    let isButton;
+    try {
+      isButton = (evt.target.className.includes('hello-bar-btn') || evt.target.className.includes('hello-bar-icon'));
+    } catch (err) {
+      isButton = null;
+    }
+    if (this.state.active && !isButton) {
+      this.toggleActive()
     }
   }
 
-  toggleActive() {
+  toggleActive = () => {
     this.setState({ active: !this.state.active });
   }
 
@@ -64,7 +53,7 @@ class OceanWiseNavBarEl extends React.Component { // eslint-disable-line react/p
 
         <div className="hello-bar-logo-toggle" style={isIE ? { width: 147 } : {}}>
           <img alt="logo" className="hello-bar-logo" src="https://dev.ryanmurray.ca/ow/ow-logo.svg" />
-          <button className={this.state.active ? 'hello-bar-btn hello-bar-btn-open' : 'hello-bar-btn hello-bar-btn-closed'} onClick={() => this.toggleActive()}>
+          <button className={this.state.active ? 'hello-bar-btn hello-bar-btn-open' : 'hello-bar-btn hello-bar-btn-closed'} onClick={this.toggleActive}>
             <img alt="chevron" className="hello-bar-icon" src="https://dev.ryanmurray.ca/ow/chevron.svg" />
           </button>
         </div>
@@ -76,7 +65,6 @@ class OceanWiseNavBarEl extends React.Component { // eslint-disable-line react/p
             <li><a href="https://ocean.org/seafood" target="_blank">Sustainable Seafood</a></li>
             <li><a href="https://research.ocean.org/" target="_blank">Ocean Wise Research</a></li>
             <li><a href="https://shorelinecleanup.ca" target="_blank">Shoreline Cleanup</a></li>
-            <li><a href="https://ocean.org/research" target="_blank">Ocean Research</a></li>
             <li><a href="https://ocean.org/education" target="_blank">Ocean Education</a></li>
             <li><a href="http://wildwhales.org" target="_blank">Whale Sightings</a></li>
             <li><a href="https://aquablog.ca/" target="_blank">Aquablog</a></li>
