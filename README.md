@@ -1,6 +1,6 @@
-# reactEmbed
+# Ocean Wise Global Navigation Bar 
 
-An node project using webpack and babel to convert a react component to a js file that can be consumed by non-react websites.
+This is a generator to compile a react component (via babel and webpack) into an embeddable JS file for non react websites. The compiled version of this file must live on Google Cloud Storage with sharing settings set to public. When changing anything in this file, just overwrite that file and then add a rule 'User -> allUsers'.
 
 ### Usage
 
